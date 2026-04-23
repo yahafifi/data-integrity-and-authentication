@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Setup 2FA</title>
+</head>
+<body>
+    <h2>Setup 2FA for {{ username }}</h2>
+
+    <p>Scan this QR code with Google Authenticator:</p>
+    <img src="/{{ qr_path }}" alt="QR Code">
+
+    <p>If scanning does not work, enter this secret manually:</p>
+    <b>{{ secret }}</b>
+
+    <h3>Enter the 6-digit code from the app</h3>
+    <form method="POST" action="/confirm_2fa">
+        <input type="text" name="code" placeholder="6-digit code" required>
+        <button type="submit">Confirm 2FA</button>
+    </form>
+</body>
+</html>
