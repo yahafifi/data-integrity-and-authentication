@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero card">
+    <h1>Flask Authentication Lab</h1>
+    <p>This app demonstrates manual registration, password policy, password hashing, Google OAuth, JWT tokens, and RBAC using SQL Server.</p>
+    <div class="actions">
+        <a class="btn" href="{{ url_for('register') }}">Register Manually</a>
+        <a class="btn secondary" href="{{ url_for('login') }}">Login</a>
+    </div>
+</section>
+
+<section class="grid">
+    <div class="card">
+        <h3>Password Policy</h3>
+        <p>Manual users must use strong passwords and passwords are stored as bcrypt hashes.</p>
+    </div>
+    <div class="card">
+        <h3>OAuth</h3>
+        <p>Users can login using Google without sharing their password with your app.</p>
+    </div>
+    <div class="card">
+        <h3>JWT + RBAC</h3>
+        <p>After login, the app generates a JWT token containing user identity and role claims.</p>
+    </div>
+</section>
+{% endblock %}

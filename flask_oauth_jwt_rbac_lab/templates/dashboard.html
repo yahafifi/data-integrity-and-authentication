@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card">
+    <h2>Dashboard</h2>
+    <p><strong>Name:</strong> {{ current_user.get('name') }}</p>
+    <p><strong>Email:</strong> {{ current_user.get('email') }}</p>
+    <p><strong>Role:</strong> {{ current_user.get('role') }}</p>
+    <p><strong>Auth Provider:</strong> {{ current_user.get('auth_provider') }}</p>
+</div>
+
+<div class="card">
+    <h3>Generated JWT Token</h3>
+    <p class="muted">Use this token in Postman with: Authorization: Bearer &lt;token&gt;</p>
+    <textarea readonly rows="8">{{ current_user.get('jwt_token') }}</textarea>
+</div>
+
+<div class="card">
+    <h3>Test Protected APIs</h3>
+    <pre>GET http://127.0.0.1:5000/api/profile</pre>
+    <pre>GET http://127.0.0.1:5000/api/admin</pre>
+</div>
+{% endblock %}

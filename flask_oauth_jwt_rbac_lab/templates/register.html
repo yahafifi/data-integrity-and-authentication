@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card form-card">
+    <h2>Create Account</h2>
+    <p class="muted">Password must contain uppercase, lowercase, number, special character, and at least 8 characters.</p>
+
+    <form method="post">
+        <label>Name</label>
+        <input type="text" name="name" required>
+
+        <label>Email</label>
+        <input type="email" name="email" required>
+
+        <label>Password</label>
+        <input type="password" name="password" required>
+
+        <label>Role</label>
+        <select name="role">
+            <option value="student">Student</option>
+            <option value="admin">Admin</option>
+        </select>
+        <p class="muted small">For teaching only: role selection is visible. In production, never allow normal users to choose admin.</p>
+
+        <button class="btn" type="submit">Register</button>
+    </form>
+</div>
+{% endblock %}
